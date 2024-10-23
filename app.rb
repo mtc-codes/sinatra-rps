@@ -15,7 +15,16 @@ get("/rock") do
 
   @my_play = "We played #{play}!"
   @counter_play = "They played #{counter}!"
-
+  @outcome = 
+    if counter == play
+      "We tied!"
+    elsif counter = "scissors"
+      "We won!"
+    elsif counter = "paper"
+      "We lost!"
+    else
+      "We lost!"
+    end
   erb(:rock)
   
 end
@@ -27,7 +36,16 @@ get("/paper") do
 
   @my_play = "We played #{play}!"
   @counter_play = "They played #{counter}!"
-
+  @outcome = 
+  if counter == play
+    "We tied!"
+  elsif counter = "rock"
+    "We won!"
+  elsif counter = "scissors"
+    "We lost!"
+  else
+    "We lost!"
+  end
   erb(:paper)
   
 end
@@ -42,10 +60,12 @@ get("/scissors") do
   @outcome = 
     if counter == play
       "We tied!"
+    elsif counter = "paper"
+      "We won!"
     elsif counter = "rock"
       "We lost!"
-    else 
-      "we won!"
+    else
+      "We lost!"
     end
   erb(:scissors)
 
